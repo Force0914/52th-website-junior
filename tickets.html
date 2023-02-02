@@ -15,8 +15,22 @@
         <a href="discover.html">Discover</a>
         <a href="tickets.html">Tickets</a>
     </div>
-    <div class="container">
-
+    <div class="container center">
+        <h1 style="text-align: center;">購票（Tickets）</h1>
+            <form class="ticketform" action="sql.php" method="post">
+                <h2>購票資訊區</h2>
+                <label for="first_name">名字（First name）</label>
+                <input type="text" class="newinput" name="first_name" id="first_name">
+                <label for="last_name">姓氏（Last name）</label>
+                <input type="text" class="newinput" name="last_name" id="last_name">
+                <label for="phone">手機號碼（Phone）</label>
+                <input type="text" class="newinput" name="phone" id="phone">
+                <label for="password">會員密碼（Password）</label>
+                <input type="password" class="newinput" name="password" id="password">
+                <label for="captcha">數字驗證（Verification）</label>
+                <input type="text" class="newinput" name="captcha" id="captcha">
+                <input type="submit" value="送出（Submit）">
+            </form>
     </div>
     <div class="social">
         <a href="https://facebook.com"><img src="img/facebook.png"></a>
