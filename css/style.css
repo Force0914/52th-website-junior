@@ -1,0 +1,97 @@
+body{
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+}
+
+.navbar{
+    width: calc(100% - 40px);
+    height: 60px;
+    background: whitesmoke  ;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar > a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.navbar > img{
+    height: 40px;
+}
+
+.container{
+    width: calc(100% - 40px);
+    height: calc(100% - 160px);
+    padding: 0 20px;
+}
+
+.footer{
+    width: 100%;
+    height: 60px;
+    background: whitesmoke  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social{
+    width: 100%;
+    height: 40px;
+}
+
+.social > a > img{
+    width: 40px;
+}
+
+.slider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.slider > img{
+    width: 50%;
+    border-radius: 5px;
+}
+
+.cardgroup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.card{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid 1px #ccc;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.card > .cardImg{
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card > .cardBody{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+}
