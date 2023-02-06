@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>2022 荷蘭世界園藝博覽會</title>
 </head>
@@ -17,6 +18,8 @@
     </div>
     <div class="container">
         <h1 style="text-align: center;">探索（Discover）</h1>
+        <div id="moretxt" style="display: none;">123123123</div>
+        <button id="morebtn" onclick="read()">Read more</button>
     </div>
     <div class="social">
         <a href="https://facebook.com"><img src="img/facebook.png"></a>
@@ -25,5 +28,13 @@
     <div class="footer">
         <p>Copyright &copy; 2022 Floriade All Rights Reserved</p>
     </div>
+    <script>
+        let show = false
+        function read() {
+            show = !show
+            $("#moretxt").toggle()
+            $("#morebtn")[0].innerHTML = show ? "Read less" : "Read more"
+        }
+    </script>
 </body>
 </html>
