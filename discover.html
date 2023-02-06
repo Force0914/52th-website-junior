@@ -65,7 +65,7 @@
     </div>
     <script>
         function read(btn, txt) {
-            let show = $(btn)[0].innerHTML == "Read more"
+            let show = $(txt)[0].style.display == "none"
             $(txt).toggle()
             $(btn)[0].innerHTML = show ? "Read less" : "Read more"
         }
