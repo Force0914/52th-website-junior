@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>2022 荷蘭世界園藝博覽會</title>
 </head>
+
 <body>
     <div class="navbar">
         <img src="img/logo.png">
@@ -18,8 +20,41 @@
     </div>
     <div class="container">
         <h1 style="text-align: center;">探索（Discover）</h1>
-        <div id="moretxt" style="display: none;">123123123</div>
-        <button id="morebtn" onclick="read()">Read more</button>
+        <div class="cardgroup">
+            <div class="card">
+                <div class="cardImg">
+                    <img src="img/taipei.jpeg">
+                </div>
+                <div class="cardBody">
+                    <h4>title</h4>
+                    <p>blablabla</p>
+                </div>
+            </div>
+        </div>
+        <div class="cardgroup">
+            <div class="card">
+                <div class="cardImg">
+                    <img src="img/taipei.jpeg">
+                </div>
+                <div class="cardBody">
+                    <h4>title</h4>
+                    <p>blablabla</p>
+                    <div id="moretxt" style="display: none;">123123123</div>
+                    <button id="morebtn" onclick="read('#morebtn','#moretxt')">Read more</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="cardImg">
+                    <img src="img/taipei.jpeg">
+                </div>
+                <div class="cardBody">
+                    <h4>title</h4>
+                    <p>blablabla</p>
+                    <div id="moretxt2" style="display: none;">asdasdasda</div>
+                    <button id="morebtn2" onclick="read('#morebtn2','#moretxt2')">Read more</button>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="social">
         <a href="https://facebook.com"><img src="img/facebook.png"></a>
@@ -29,12 +64,12 @@
         <p>Copyright &copy; 2022 Floriade All Rights Reserved</p>
     </div>
     <script>
-        let show = false
-        function read() {
-            show = !show
-            $("#moretxt").toggle()
-            $("#morebtn")[0].innerHTML = show ? "Read less" : "Read more"
+        function read(btn, txt) {
+            let show = $(btn)[0].innerHTML == "Read more"
+            $(txt).toggle()
+            $(btn)[0].innerHTML = show ? "Read less" : "Read more"
         }
     </script>
 </body>
+
 </html>
