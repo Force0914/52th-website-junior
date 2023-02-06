@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>2022 荷蘭世界園藝博覽會</title>
 </head>
@@ -18,7 +19,32 @@
     <div class="container">
         <h1 style="text-align: center;">首頁（Home）</h1>
         <div class="slider">
-            <img src="img/taipei.jpeg">
+            <button onclick="prev()"><</button>
+            <div style="display: block;">
+                <img src="img/taipei.jpeg">
+                <p>1</p>
+            </div>
+            <div style="display: none;">
+                <img src="img/taipei.jpeg">
+                <p>2</p>
+            </div>
+            <div style="display: none;">
+                <img src="img/taipei.jpeg">
+                <p>3</p>
+            </div>
+            <div style="display: none;">
+                <img src="img/taipei.jpeg">
+                <p>4</p>
+            </div>
+            <div style="display: none;">
+                <img src="img/taipei.jpeg">
+                <p>5</p>
+            </div>
+            <div style="display: none;">
+                <img src="img/taipei.jpeg">
+                <p>6</p>
+            </div>
+            <button onclick="next()">></button>
         </div>
         <div class="cardgroup">
             <div class="card">
@@ -57,5 +83,35 @@
     <div class="footer">
         <p>Copyright &copy; 2022 Floriade All Rights Reserved</p>
     </div>
+    <script>
+        let slider = $(".slider").children()
+
+        function prev() {
+            let showImg = {}
+            slider.each((index,element) =>{
+                if (element.localName == "button" || element.style.display == "none") return
+                showImg = {index,element}
+            })
+            let nextindex = showImg.index - 1
+            if (nextindex < 1) nextindex = slider.length - 2
+            showImg.element.style.display = "none"
+            slider[nextindex].style.display = "block"
+        }
+
+        function next() {
+            let showImg = {}
+            slider.each((index,element) =>{
+                if (element.localName == "button" || element.style.display == "none") return
+                showImg = {index,element}
+            })
+            let nextindex = showImg.index + 1
+            if (nextindex > slider.length - 2) nextindex = 1
+            showImg.element.style.display = "none"
+            slider[nextindex].style.display = "block"
+        }
+        setInterval(() => {
+            next()
+        }, 2000);
+    </script>
 </body>
 </html>
