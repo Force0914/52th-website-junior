@@ -100,6 +100,7 @@
 
         function next() {
             let showImg = {}
+            //$(".slider div").map((index,element) => {return {index,element}}).filter((a,b) => b.element.style.display == "block")[0]
             slider.each((index,element) =>{
                 if (element.localName == "button" || element.style.display == "none") return
                 showImg = {index,element}
@@ -110,7 +111,7 @@
             slider[nextindex].style.display = "block"
         }
         setInterval(() => {
-            next()
+            // next()
         }, 2000);
     </script>
 </body>
