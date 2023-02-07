@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <title>2022 荷蘭世界園藝博覽會</title>
 </head>
@@ -28,6 +29,7 @@
                 <label for="password">會員密碼（Password）</label>
                 <input type="password" class="newinput" name="password" id="password">
                 <label for="captcha">數字驗證（Verification）</label>
+                <p id="captchanum">0000</p>
                 <input type="text" class="newinput" name="captcha" id="captcha">
                 <input type="submit" value="送出（Submit）">
             </form>
@@ -39,5 +41,18 @@
     <div class="footer">
         <p>Copyright &copy; 2022 Floriade All Rights Reserved</p>
     </div>
+    <script>
+        let captchanum = Math.floor(Math.random()*8999)+1000
+        $("#captchanum")[0].innerHTML = captchanum
+        $("form").submit((event)=>{
+          event.preventDefault();
+          if ($("#captcha").val() != captchanum) {
+            alert("驗證碼不正確！");
+            return false;
+          } else {
+            $("form").unbind("submit").submit();
+          }
+        });
+    </script>
 </body>
 </html>
